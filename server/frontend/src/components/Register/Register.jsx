@@ -1,7 +1,8 @@
+
 import React, { useState } from "react";
 
-export default function Register() {
-  const [form, setForm] = useState({
+const Register = () => {
+  const [formData, setFormData] = useState({
     userName: "",
     firstName: "",
     lastName: "",
@@ -11,39 +12,111 @@ export default function Register() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Connect this form to your application's registration API when available.
-    // Do not store passwords in browser storage or log them.
-    alert("Registration form submitted. Connect this form to the registration API to create an account.");
+    alert("Registration form submitted.");
   };
 
   return (
-    <main className="register-page">
-      <form className="register-form" onSubmit={handleSubmit}>
-        <h1>Sign-up</h1>
-        <p>Create an account to review car dealerships.</p>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h2 className="text-center mb-4">Sign Up</h2>
 
-        <label htmlFor="userName">Username</label>
-        <input id="userName" name="userName" value={form.userName} onChange={handleChange} autoComplete="username" required />
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="userName" className="form-label">
+                    Username
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="userName"
+                    name="userName"
+                    value={formData.userName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-        <label htmlFor="firstName">First Name</label>
-        <input id="firstName" name="firstName" value={form.firstName} onChange={handleChange} autoComplete="given-name" required />
+                <div className="mb-3">
+                  <label htmlFor="firstName" className="form-label">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-        <label htmlFor="lastName">Last Name</label>
-        <input id="lastName" name="lastName" value={form.lastName} onChange={handleChange} autoComplete="family-name" required />
+                <div className="mb-3">
+                  <label htmlFor="lastName" className="form-label">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-        <label htmlFor="email">Email</label>
-        <input id="email" name="email" type="email" value={form.email} onChange={handleChange} autoComplete="email" required />
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-        <label htmlFor="password">Password</label>
-        <input id="password" name="password" type="password" value={form.password} onChange={handleChange} autoComplete="new-password" required />
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-        <button type="submit">Register</button>
-      </form>
-    </main>
+                <button type="submit" className="btn btn-primary w-100">
+                  Register
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Register;
