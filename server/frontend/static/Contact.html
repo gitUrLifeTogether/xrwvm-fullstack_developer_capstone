@@ -1,49 +1,83 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us | Car Dealership Reviews</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Car Dealership Reviews</title>
+
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html">Car Dealership Reviews</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="About.html">About Us</a>
-      <a class="active" href="Contact.html" aria-current="page">Contact Us</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Car Dealership Reviews</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/about">About Us</a>
+                <a class="nav-link active" aria-current="page"
+                   href="/contact">Contact Us</a>
+            </div>
+        </div>
     </nav>
-  </header>
-  <main class="container">
-    <section class="hero">
-      <p class="eyebrow">We’re here to help</p>
-      <h1>Contact Us</h1>
-      <p>Questions, feedback, or suggestions? Reach out using the details below.</p>
-    </section>
-    <section class="contact-grid">
-      <article class="content-card">
-        <h2>Contact information</h2>
-        <p><strong>Email</strong><br><a href="mailto:support@example.com">support@example.com</a></p>
-        <p><strong>Phone</strong><br><a href="tel:+18005550199">+1 (800) 555-0199</a></p>
-        <p><strong>Office</strong><br>100 Market Street, Suite 200<br>Springfield, USA</p>
-        <p><strong>Hours</strong><br>Monday–Friday, 9:00 AM–5:00 PM</p>
-      </article>
-      <article class="content-card">
-        <h2>Send a message</h2>
-        <form action="#" method="post">
-          <label for="name">Full name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-          <label for="email">Email address</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-          <button type="submit">Send message</button>
-          <p class="note">Demo form only; it is not connected to a message service.</p>
-        </form>
-      </article>
-    </section>
-  </main>
-  <footer class="site-footer">© 2026 Car Dealership Reviews</footer>
+
+    <main class="container my-5">
+        <section class="row align-items-center g-4">
+            <div class="col-md-6">
+                <h1>Contact Us</h1>
+                <p>
+                    Have a question about a dealership or a car review?
+                    Our team is here to help.
+                </p>
+
+                <h2>Get in Touch</h2>
+                <p><strong>Email:</strong> support@example.com</p>
+                <p><strong>Phone:</strong> +1 800 555 0100</p>
+                <p><strong>Office:</strong> Customer Support Department</p>
+                <p><strong>Hours:</strong> Monday–Friday, 9:00 AM–5:00 PM</p>
+
+                <h2>Send Us a Message</h2>
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control"
+                               id="name" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control"
+                               id="email" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message"
+                                  name="message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
+                    alt="Modern office building"
+                    class="img-fluid rounded shadow">
+                <p class="mt-3">
+                    Contact our support team for help with your dealership
+                    reviews and questions.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2026 Car Dealership Reviews</p>
+    </footer>
 </body>
 </html>
